@@ -61,15 +61,24 @@ namespace main_savitch_2C
         statistician s3;
         s3.count = s1.count + s2.count;
         s3.total = s1.total + s2.total;
-        if (s1.tiniest < s2.tiniest)
-            s3.tiniest = s1.tiniest;
-        else
+        if (s1.count == 0){
             s3.tiniest = s2.tiniest;
-        if (s1.largest > s2.largest)
-            s3.largest = s1.largest;
-        else
             s3.largest = s2.largest;
-
+        }
+        else if (s2.count == 0){
+            s3.tiniest = s1.tiniest;
+            s3.largest = s1.largest;
+        }
+        else{
+            if (s1.tiniest < s2.tiniest)
+                s3.tiniest = s1.tiniest;
+            else
+                s3.tiniest = s2.tiniest;
+            if (s1.largest > s2.largest)
+                s3.largest = s1.largest;
+            else
+                s3.largest = s2.largest;
+        }
         return s3;
     }
 
