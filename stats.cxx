@@ -90,6 +90,12 @@ namespace main_savitch_2C
         s2.tiniest = s.tiniest * scale;
         s2.largest = s.largest * scale;
 
+        if (s2.tiniest > s2.largest)
+        {
+            int temp_tiny = s2.tiniest;
+            s2.tiniest = s2.largest;
+            s2.largest = temp_tiny;
+        }
         return s2;
     }
 
