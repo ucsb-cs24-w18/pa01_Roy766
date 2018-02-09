@@ -1,4 +1,4 @@
-// Aidan Babb, 9AM
+// Aidan Babb, 2/8/18, 9AM lab
 // stats.cxx - implements statistician class as defined in stats.h
 // YOUR NAME(S), DATE
 
@@ -41,19 +41,19 @@ namespace main_savitch_2C
 
     double statistician::mean( ) const
     {
-        if (count > 0)
-            return (total / count);
+        assert(count > 0);
+        return (total / count);
     }
 
     double statistician::minimum( ) const
     {
-        if (count > 0)
-            return tiniest;
+        assert(count > 0);
+        return tiniest;
     }
     double statistician::maximum( ) const
     {
-        if (count > 0)
-            return largest;
+        assert(count > 0);
+        return largest;
     }
 
     statistician operator +(const statistician& s1, const statistician& s2)
